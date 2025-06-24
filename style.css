@@ -525,6 +525,7 @@ footer {
 
     .logo {
         margin: 0; /* Asegura que no haya márgenes sobrantes aquí */
+        align-items: center;
     }
 
     .logo-img {
