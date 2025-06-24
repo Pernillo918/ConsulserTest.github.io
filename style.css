@@ -59,6 +59,7 @@ section[id] {
     position: absolute;
     width: 0;
     height: 0;
+    overflow: hidden; /* Oculta el SVG en el DOM, solo se usa para las definiciones */
 }
 
 /* ---------------------------------------------------- */
@@ -69,11 +70,11 @@ section[id] {
     z-index: 100;
     background: linear-gradient(to bottom, #f7f1e4, #b9ae8f);
     min-height: 250px;
-    padding: 20px 0;
+    padding: 20px 0; /* Padding vertical general, horizontal lo maneja header-top */
 
     display: flex;
     align-items: center;
-    clip-path: url(#wave-inverted);
+    clip-path: url(#wave-inverted); /* **Curva para escritorio** */
     margin-top: 0 !important;
     border-top: none !important;
 }
@@ -84,13 +85,12 @@ section[id] {
     align-items: center;
     width: 100%;
 
-    margin-top: -50px;
+    margin-top: -50px; /* Mantener para escritorio para el diseño general */
+    padding: 0 40px; /* Padding horizontal para el contenido principal del header-top */
 }
 
 
-.logo {
-    margin-left: 40px;
-}
+
 
 .logo-img {
     height: 200px;
@@ -101,7 +101,7 @@ section[id] {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-right: 40px;
+    /* No se necesitan márgenes específicos aquí para desktop, el justify-content lo alinea */
 }
 
 .menu {
@@ -150,9 +150,9 @@ section[id] {
 .portal-access {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos (botón, párrafo) horizontalmente */
     gap: 5px;
-    margin-left: 20px; /* Mantén este margen para escritorio */
+    margin-left: 20px; /* Mantener para escritorio */
 }
 
 /* Estilos específicos para el texto del registro */
@@ -505,21 +505,26 @@ footer {
 /* DISEÑO RESPONSIVO (MEDIA QUERIES)                                 */
 /* =================================================================== */
 
+/* Reglas para Tabletas y Teléfonos Grandes (hasta 992px) */
 @media (max-width: 992px) {
 
-    /* --- AJUSTES RESPONSIVOS PARA EL HEADER --- */
     .contenedor-header {
-        clip-path: url(#wave-mobile);
+        clip-path: url(#wave-mobile); /* **Asegura que la curva esté activa en móviles** */
         min-height: auto;
-        padding: 15px 20px 60px 20px;
+        padding: 15px 20px 60px 20px; /* Ajustado el padding para móvil */
         align-items: flex-start;
     }
 
     .header-top {
-        flex-direction: column;
-        align-items: center; /* Centra el logo, menú y acciones */
+        flex-direction: column; /* Apila el logo, el menú y las acciones */
+        align-items: center;    /* Centra todo horizontalmente */
         width: 100%;
-        margin-top: 0;
+        margin-top: 0; /* Elimina el margen negativo en móviles */
+        padding: 0; /* El padding del contenedor-header es suficiente */
+    }
+
+    .logo {
+        margin: 0; /* Asegura que no haya márgenes sobrantes aquí */
     }
 
     .logo-img {
@@ -528,84 +533,71 @@ footer {
     }
 
     .header-actions {
-        flex-direction: column;
+        flex-direction: column; /* Apila el menú y el portal-access */
         gap: 20px;
         width: 100%;
         align-items: center; /* Centra los elementos: menú y portal-access */
-        margin-right: 0; /* Elimina el margen derecho que puede desplazar */
+        margin-right: 0; /* Elimina el margen derecho de escritorio */
     }
 
     .menu {
-        justify-content: center;
+        justify-content: center; /* Centra los items del menú */
         flex-wrap: wrap;
         gap: 10px;
+        padding: 0 10px; /* Añade un poco de padding para que los links no se peguen a los bordes */
+        width: 100%; /* Asegura que el menú ocupe el ancho completo para centrado */
     }
 
-    /* Ajuste para portal-access en pantallas medianas */
+    /* Ajuste clave para .portal-access en pantallas medianas y pequeñas */
     .portal-access {
         margin-top: 10px;
-        margin-left: 0; /* ¡MUY IMPORTANTE! Elimina el margen izquierdo para centrar */
-        /* display: flex; /* Ya está definido arriba */
-        /* flex-direction: column; /* Ya está definido arriba */
-        /* align-items: center; /* Ya está definido arriba */
-        /* gap: 5px; /* Ya está definido arriba */
-    }
-
-    /* --- AJUSTES RESTANTES (SECCIÓN 'QUIÉNES SOMOS') --- */
-    #quienes-somos .row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #quienes-somos .col-md-3, #quienes-somos .col-md-6 {
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    #quienes-somos .col-md-3 {
-        display: none;
+        margin-left: 0; /* ¡IMPORTANTE! Anula el margen izquierdo de escritorio */
+        margin-right: 0; /* Asegura que no haya margen derecho */
+        width: 100%; /* Permite que el botón y el texto ocupen el ancho completo para centrar */
+        padding: 0 15px; /* Añade padding interno para que el contenido no toque los bordes del dispositivo */
     }
 }
 
-/* Ajuste fino para teléfonos (pantallas medianas y pequeñas) */
+/* Ajuste fino para Teléfonos (pantallas hasta 768px) */
 @media (max-width: 768px) {
     #quienes-somos .section-header {
-        margen: 30px;
+        margin-bottom: 30px;
     }
 
-    #quienes-somos. Sección Título {
-        tamaño de una fuente: 28px;
+    #quienes-somos .section-title {
+        font-size: 28px;
     }
 
-    #quienes-somos .quienes-somos-contento {
-        relleno: 0 15px;
+    #quienes-somos .quienes-somos-content {
+        padding: 0 15px;
     }
 
     #quienes-somos p {
-        tamaño de una fuente: 16px;
+        font-size: 16px;
     }
 
     #quienes-somos li {
-        tamaño de una fuente: 15px;
+        font-size: 15px;
     }
 
-    /* Asegúrate de que el Portal-Access SE Centra Bien en Pantallas Más Pequeñas También */
-    .acceso al portal {
-        margen-top: 10px;
-        margen de pesa: 0; /* Redundante Pero no Hace Daño, Asegura que no Haya Margen */
-    }
+    /* .portal-access ya está bien cubierto en el media query de 992px */
 }
 
 
-/* Ajuste para Teléfonos aún Más Pequeños */
-@medios Delaware comunicacia (ancho máximo: 480px) {
-    .Menú a {
-        tamaño de una fuente: 14px;
+/* Ajuste para Teléfonos Pequeños (pantallas hasta 480px) */
+@media (max-width: 480px) {
+    .menu a {
+        font-size: 14px;
         padding: 6px 10px;
     }
 
     .btn-portal {
-        ancho: 100%; /* El Botón Ocupa TODO El Ancho Disponible */
-        Justify-Content: centro; /* Centra el TextO y El Icono Dentro del Botón */
+        width: 100%; /* El botón ocupa todo el ancho disponible dentro de su padding */
+        justify-content: center; /* Centra el texto y el icono dentro del botón */
+    }
+
+    .registration-info {
+        font-size: 0.75rem; /* Hacemos el texto aún más pequeño si es necesario */
+        padding: 0 5px; /* Pequeño padding para asegurar que no se corte en los bordes */
     }
 }
