@@ -1,17 +1,17 @@
 /* =================================================================== */
-/* ARCHVO DE ESTILOS COMPLETO - CONSULSER              */
+/* ARCHVO DE ESTILOS COMPLETO - CONSULSER                             */
 /* =================================================================== */
 
 /* ----------------------------- */
 /* PALETA DE COLORES Y VARIABLES */
 /* ----------------------------- */
 :root {
-    --color-primary: #1e1e1e;      /* Fondo oscuro elegante */
+    --color-primary: #1e1e1e;       /* Fondo oscuro elegante */
     --color-primary-dark: #121212; /* Aún más oscuro para navbar/footer */
-    --color-secondary: #bfa359;    /* Dorado metálico base */
-    --color-accent: #d4af37;      /* Dorado brillante para detalles */
-    --color-light: #f5f5f5;       /* Fondo claro neutro */
-    --color-dark: #2b2b2b;        /* Texto oscuro */
+    --color-secondary: #bfa359;     /* Dorado metálico base */
+    --color-accent: #d4af37;        /* Dorado brillante para detalles */
+    --color-light: #f5f5f5;         /* Fondo claro neutro */
+    --color-dark: #2b2b2b;          /* Texto oscuro */
     --color-white: #ffffff;
 }
 
@@ -62,7 +62,7 @@ section[id] {
 }
 
 /* ---------------------------------------------------- */
-/* HEADER Y NAVEGACIÓN (CON LA ALINEACIÓN CORREGIDA) */
+/* HEADER Y NAVEGACIÓN (CON LA ALINEACIÓN CORREGIDA)    */
 /* ---------------------------------------------------- */
 .contenedor-header {
     position: relative;
@@ -70,10 +70,10 @@ section[id] {
     background: linear-gradient(to bottom, #f7f1e4, #b9ae8f);
     min-height: 250px;
     padding: 20px 0;
-    
+
     display: flex;
     align-items: center;
-    clip-path: url(#wave-inverted); 
+    clip-path: url(#wave-inverted);
     margin-top: 0 !important;
     border-top: none !important;
 }
@@ -83,7 +83,7 @@ section[id] {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    
+
     margin-top: -50px;
 }
 
@@ -145,6 +145,25 @@ section[id] {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
+/* Estilos para el contenedor del portal */
+.portal-access {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 5px;
+    margin-left: 20px; /* Mantén este margen para escritorio */
+}
+
+/* Estilos específicos para el texto del registro */
+.registration-info {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 1.2;
+}
+
 
 /* ----------------------------- */
 /* SECCIÓN HERO (CARRUSEL) */
@@ -483,46 +502,53 @@ footer {
 
 
 /* =================================================================== */
-/* DISEÑO RESPONSIVO (MEDIA QUERIES)                   */
+/* DISEÑO RESPONSIVO (MEDIA QUERIES)                                 */
 /* =================================================================== */
 
 @media (max-width: 992px) {
 
     /* --- AJUSTES RESPONSIVOS PARA EL HEADER --- */
     .contenedor-header {
-        clip-path: url(#wave-mobile); /* Usamos la nueva curva más simple */
-        min-height: auto; /* Altura automática basada en el contenido */
-        padding: 15px 20px 60px 20px; /* Menos padding lateral, más abajo por la curva */
-        align-items: flex-start; /* Alineamos al inicio */
+        clip-path: url(#wave-mobile);
+        min-height: auto;
+        padding: 15px 20px 60px 20px;
+        align-items: flex-start;
     }
 
     .header-top {
-        flex-direction: column; /* Apilamos los elementos */
-        align-items: center; /* Centramos todo */
-        width: 100%;      /* El ancho debe ser 100% normal */
-        margin-top: 0;    /* Quitamos el margen negativo */
+        flex-direction: column;
+        align-items: center; /* Centra el logo, menú y acciones */
+        width: 100%;
+        margin-top: 0;
     }
-    
+
     .logo-img {
-        height: 100px; /* Hacemos el logo más pequeño */
-        margin-bottom: 20px; /* Espacio entre el logo y el menú */
+        height: 100px;
+        margin-bottom: 20px;
     }
 
     .header-actions {
         flex-direction: column;
         gap: 20px;
         width: 100%;
-        align-items: center;
+        align-items: center; /* Centra los elementos: menú y portal-access */
+        margin-right: 0; /* Elimina el margen derecho que puede desplazar */
     }
 
     .menu {
         justify-content: center;
-        flex-wrap: wrap; /* El menú se puede dividir en dos líneas si es necesario */
+        flex-wrap: wrap;
         gap: 10px;
     }
-    
+
+    /* Ajuste para portal-access en pantallas medianas */
     .portal-access {
         margin-top: 10px;
+        margin-left: 0; /* ¡MUY IMPORTANTE! Elimina el margen izquierdo para centrar */
+        /* display: flex; /* Ya está definido arriba */
+        /* flex-direction: column; /* Ya está definido arriba */
+        /* align-items: center; /* Ya está definido arriba */
+        /* gap: 5px; /* Ya está definido arriba */
     }
 
     /* --- AJUSTES RESTANTES (SECCIÓN 'QUIÉNES SOMOS') --- */
@@ -530,80 +556,56 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     #quienes-somos .col-md-3, #quienes-somos .col-md-6 {
         max-width: 100%;
         padding: 15px;
     }
-    
+
     #quienes-somos .col-md-3 {
-        display: none; /* Ocultamos la columna lateral como lo tenías */
+        display: none;
     }
 }
 
 /* Ajuste fino para teléfonos (pantallas medianas y pequeñas) */
 @media (max-width: 768px) {
     #quienes-somos .section-header {
-        margin-bottom: 30px;
+        margen: 30px;
     }
 
-    #quienes-somos .section-title {
-        font-size: 28px;
+    #quienes-somos. Sección Título {
+        tamaño de una fuente: 28px;
     }
 
-    #quienes-somos .quienes-somos-content {
-        padding: 0 15px;
+    #quienes-somos .quienes-somos-contento {
+        relleno: 0 15px;
     }
 
     #quienes-somos p {
-        font-size: 16px;
+        tamaño de una fuente: 16px;
     }
 
     #quienes-somos li {
-        font-size: 15px;
+        tamaño de una fuente: 15px;
+    }
+
+    /* Asegúrate de que el Portal-Access SE Centra Bien en Pantallas Más Pequeñas También */
+    .acceso al portal {
+        margen-top: 10px;
+        margen de pesa: 0; /* Redundante Pero no Hace Daño, Asegura que no Haya Margen */
     }
 }
 
 
-/* Ajuste para teléfonos aún más pequeños */
-@media (max-width: 480px) {
-    .menu a {
-        font-size: 14px;
+/* Ajuste para Teléfonos aún Más Pequeños */
+@medios Delaware comunicacia (ancho máximo: 480px) {
+    .Menú a {
+        tamaño de una fuente: 14px;
         padding: 6px 10px;
     }
 
     .btn-portal {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-
-
-
-
-/* Estilos para el contenedor del portal si no los tienes */
-.portal-access {
-    display: flex; /* Esto ayudará a alinear los elementos si el botón y el texto están en la misma línea */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    gap: 5px; /* Pequeño espacio entre el botón y el texto */
-    margin-left: 20px; /* Ajusta según el espaciado deseado con el menú */
-}
-
-/* Estilos específicos para el texto del registro */
-.registration-info {
-    font-size: 0.8rem; /* Un poco más pequeño que 0.9rem para que no compita tanto */
-    color: #666; /* Un color de texto más suave */
-    margin-top: 5px; /* Pequeño margen superior para separarlo del botón */
-    text-align: center; /* Centra el texto */
-    line-height: 1.2; /* Ajusta el interlineado si es necesario */
-}
-
-/* Puedes añadir un media query para pantallas más pequeñas si el diseño se rompe */
-@media (max-width: 768px) {
-    .portal-access {
-        margin-top: 10px; /* Agrega un poco de espacio si se apila debajo de otros elementos */
+        ancho: 100%; /* El Botón Ocupa TODO El Ancho Disponible */
+        Justify-Content: centro; /* Centra el TextO y El Icono Dentro del Botón */
     }
 }
