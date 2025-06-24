@@ -1,0 +1,609 @@
+/* =================================================================== */
+/* ARCHVO DE ESTILOS COMPLETO - CONSULSER              */
+/* =================================================================== */
+
+/* ----------------------------- */
+/* PALETA DE COLORES Y VARIABLES */
+/* ----------------------------- */
+:root {
+    --color-primary: #1e1e1e;      /* Fondo oscuro elegante */
+    --color-primary-dark: #121212; /* Aún más oscuro para navbar/footer */
+    --color-secondary: #bfa359;    /* Dorado metálico base */
+    --color-accent: #d4af37;      /* Dorado brillante para detalles */
+    --color-light: #f5f5f5;       /* Fondo claro neutro */
+    --color-dark: #2b2b2b;        /* Texto oscuro */
+    --color-white: #ffffff;
+}
+
+/* ----------------------------- */
+/* ESTILOS GENERALES Y TIPOGRAFÍA */
+/* ----------------------------- */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-light);
+}
+
+body::before {
+    content: none !important;
+    display: none !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor-header,
+.contenedor-header * {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h1,h2,h3,h4,h5,h6,.display-4,.lead {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+    padding: 60px 0;
+}
+
+.svg-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+/* ---------------------------------------------------- */
+/* HEADER Y NAVEGACIÓN (CON LA ALINEACIÓN CORREGIDA) */
+/* ---------------------------------------------------- */
+.contenedor-header {
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(to bottom, #f7f1e4, #b9ae8f);
+    min-height: 250px;
+    padding: 20px 0;
+    
+    display: flex;
+    align-items: center;
+    clip-path: url(#wave-inverted); 
+    margin-top: 0 !important;
+    border-top: none !important;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    margin-top: -50px;
+}
+
+
+.logo {
+    margin-left: 40px;
+}
+
+.logo-img {
+    height: 200px;
+    width: auto;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 40px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #3b2e1d;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    color: #5a4a2a;
+    background-color: rgba(199, 177, 132, 0.2);
+}
+
+.btn-portal {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-portal:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ----------------------------- */
+/* SECCIÓN HERO (CARRUSEL) */
+/* ----------------------------- */
+#heroCarousel {
+    position: relative;
+    z-index: 50;
+    margin-top: -120px;
+}
+
+.carousel-inner {
+    height: 80vh;
+    min-height: 500px;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-align: center;
+    padding: 80px 15px 0;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-content {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.carousel-item.active .text-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    z-index: 6;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100% 100%;
+}
+
+/* ----------------------------- */
+/* SECCIÓN 'QUIÉNES SOMOS' */
+/* ----------------------------- */
+#quienes-somos {
+    background-color: var(--color-white);
+    padding: 50px 0;
+}
+
+#quienes-somos .row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#quienes-somos .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 60px;
+}
+
+#quienes-somos .col-md-6 {
+    flex: 0 0 45%;
+    max-width: 45%;
+    padding-top: 75px;
+    text-align: center;
+}
+
+#quienes-somos .section-header {
+    margin-bottom: 50px;
+}
+
+#quienes-somos .section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#quienes-somos .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--color-secondary);
+}
+
+#quienes-somos .section-subtitle {
+    color: var(--color-dark-light, #6c757d);
+    font-size: 1.1rem;
+}
+
+#quienes-somos .quienes-somos-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+#quienes-somos p {
+    font-size: 18px;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#quienes-somos ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+#quienes-somos li {
+    font-size: 17px;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.quienes-somos-carousel .carousel-item {
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.quienes-somos-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* ----------------------------- */
+/* SECCIÓN SERVICIOS (FEATURES) */
+/* ----------------------------- */
+#features {
+    background-color: var(--color-light);
+}
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card .card-body {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-icon {
+    color: var(--color-secondary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-image-container {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    overflow: hidden;
+}
+
+.feature-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 9px;
+    image-rendering: auto;
+}
+
+#features h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#features p {
+    font-size: 0.95rem;
+}
+
+/* ----------------------------- */
+/* SECCIÓN ASEGURADORAS (TESTIMONIALS) */
+/* ----------------------------- */
+#testimonials {
+    background-color: var(--color-white);
+    padding: 20px 0;
+}
+
+#testimonials .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#testimonials .col-6,
+#testimonials .col-sm-4,
+#testimonials .col-md-3,
+#testimonials .col-lg-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#testimonials .bg-white {
+    width: 160px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#testimonials img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.4s;
+}
+
+#testimonials img:hover {
+    filter: grayscale(0%) brightness(1.1);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ----------------------------- */
+/* SECCIÓN CONTACTO Y FOOTER */
+/* ----------------------------- */
+#contact {
+    background-color: var(--color-light);
+}
+
+footer {
+    background-color: var(--color-primary) !important;
+    color: var(--color-white);
+    border-top: 3px solid var(--color-secondary);
+    padding: 30px 0;
+}
+
+.social-icons a {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--color-accent);
+    transform: scale(1.2);
+}
+
+/* ----------------------------- */
+/* CLASES DE UTILIDAD (Bootstrap Overrides) */
+/* ----------------------------- */
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.rounded {
+    border-radius: 0.5rem !important;
+}
+
+
+/* =================================================================== */
+/* DISEÑO RESPONSIVO (MEDIA QUERIES)                   */
+/* =================================================================== */
+
+@media (max-width: 992px) {
+
+    /* --- AJUSTES RESPONSIVOS PARA EL HEADER --- */
+    .contenedor-header {
+        clip-path: url(#wave-mobile); /* Usamos la nueva curva más simple */
+        min-height: auto; /* Altura automática basada en el contenido */
+        padding: 15px 20px 60px 20px; /* Menos padding lateral, más abajo por la curva */
+        align-items: flex-start; /* Alineamos al inicio */
+    }
+
+    .header-top {
+        flex-direction: column; /* Apilamos los elementos */
+        align-items: center; /* Centramos todo */
+        width: 100%;      /* El ancho debe ser 100% normal */
+        margin-top: 0;    /* Quitamos el margen negativo */
+    }
+    
+    .logo-img {
+        height: 100px; /* Hacemos el logo más pequeño */
+        margin-bottom: 20px; /* Espacio entre el logo y el menú */
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap; /* El menú se puede dividir en dos líneas si es necesario */
+        gap: 10px;
+    }
+    
+    .portal-access {
+        margin-top: 10px;
+    }
+
+    /* --- AJUSTES RESTANTES (SECCIÓN 'QUIÉNES SOMOS') --- */
+    #quienes-somos .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #quienes-somos .col-md-3, #quienes-somos .col-md-6 {
+        max-width: 100%;
+        padding: 15px;
+    }
+    
+    #quienes-somos .col-md-3 {
+        display: none; /* Ocultamos la columna lateral como lo tenías */
+    }
+}
+
+/* Ajuste fino para teléfonos (pantallas medianas y pequeñas) */
+@media (max-width: 768px) {
+    #quienes-somos .section-header {
+        margin-bottom: 30px;
+    }
+
+    #quienes-somos .section-title {
+        font-size: 28px;
+    }
+
+    #quienes-somos .quienes-somos-content {
+        padding: 0 15px;
+    }
+
+    #quienes-somos p {
+        font-size: 16px;
+    }
+
+    #quienes-somos li {
+        font-size: 15px;
+    }
+}
+
+
+/* Ajuste para teléfonos aún más pequeños */
+@media (max-width: 480px) {
+    .menu a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .btn-portal {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+/* Estilos para el contenedor del portal si no los tienes */
+.portal-access {
+    display: flex; /* Esto ayudará a alinear los elementos si el botón y el texto están en la misma línea */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 5px; /* Pequeño espacio entre el botón y el texto */
+    margin-left: 20px; /* Ajusta según el espaciado deseado con el menú */
+}
+
+/* Estilos específicos para el texto del registro */
+.registration-info {
+    font-size: 0.8rem; /* Un poco más pequeño que 0.9rem para que no compita tanto */
+    color: #666; /* Un color de texto más suave */
+    margin-top: 5px; /* Pequeño margen superior para separarlo del botón */
+    text-align: center; /* Centra el texto */
+    line-height: 1.2; /* Ajusta el interlineado si es necesario */
+}
+
+/* Puedes añadir un media query para pantallas más pequeñas si el diseño se rompe */
+@media (max-width: 768px) {
+    .portal-access {
+        margin-top: 10px; /* Agrega un poco de espacio si se apila debajo de otros elementos */
+    }
+}
