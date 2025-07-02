@@ -348,6 +348,64 @@ section[id] {
     opacity: 0.9;
 }
 
+
+
+
+
+
+/* ============================================= */
+/* INICIO: ESTILOS PARA SECCIÓN DE AFILIACIÓN    */
+/* ============================================= */
+
+#afiliacion-acordes {
+    background-color: var(--color-primary-dark); /* Fondo oscuro para resaltar */
+    color: var(--color-white);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.afiliacion-logo {
+    max-width: 160px; /* Tamaño controlado para el logo */
+    height: auto;
+}
+
+#afiliacion-acordes h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#afiliacion-acordes .lead.text-acento {
+    color: var(--color-accent); /* Usa tu color dorado para el nombre de la asociación */
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Ajustes para que la sección de afiliación se vea bien en teléfonos */
+@media (max-width: 768px) {
+    #afiliacion-acordes h2 {
+        font-size: 2rem;
+    }
+    #afiliacion-acordes .lead.text-acento {
+        font-size: 1.2rem;
+    }
+    .afiliacion-logo {
+        max-width: 120px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ----------------------------- */
 /* SECCIÓN SERVICIOS (FEATURES)  */
 /* ----------------------------- */
